@@ -8,10 +8,19 @@ def index(request):
 
     return render(request, 'index.html',{"images":images})
 
-def details(request, image_id):
+def details(request,id):
     try:
-        specific = Image.objects.get(id=image_id)
+        specific = Image.objects.get(id=id)
     except DoesNotExist:
         raise Http404()
     
     return render(request, "details.html",{"specific":specific})
+
+# def full_image(request, id):
+#     try:
+#         full_image = Image.objects.get(id=id)
+#     except DoesNotExist:
+#         raise Http404()
+    
+#     return render(request, "image.html",{"full_image":full_image})
+    

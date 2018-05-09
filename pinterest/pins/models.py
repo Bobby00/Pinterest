@@ -29,3 +29,7 @@ class Image(models.Model):
     #     return reverse("pins:details", kwargs={"id": self.id})
     class Meta:
         ordering = ['name']
+
+    def get_image(image_id):
+        images = Image.objects.get(id = image_id)
+        return images

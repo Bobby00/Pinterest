@@ -6,6 +6,7 @@ from . import views
 urlpatterns=[
     url(r'^$',views.index,name = 'index'),
     url(r'^image/(\d+)',views.details,name='details'),
+    
 ]
 
 if settings.DEBUG:

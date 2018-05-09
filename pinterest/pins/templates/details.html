@@ -2,6 +2,9 @@
 {% block content %}
 {{block.super}}
 
+    <img src="{{specific.image.url}}" alt="image">
+
 <p>{{specific.category}}</p>
 <p>{{specific.location}}</p>
+<a href="/">Full view</a>
 {% endblock %}
