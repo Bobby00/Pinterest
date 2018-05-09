@@ -6,3 +6,6 @@ class Location(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=30)
+
+# class Image(models.Model):
+#     image = models.ImageField(upload_to = 'images/') 
