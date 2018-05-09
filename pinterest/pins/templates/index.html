@@ -2,4 +2,8 @@
 {% block content %}
 {{block.super}}
 <h1>YOOOOH</h1>
+{% for image in images %}
+<img src="{{image.image.url}}" alt="image1">
+<button><a href="{%url 'details' image.id%}">View</a></button>
+{% endfor %}
 {% endblock %}
