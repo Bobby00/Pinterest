@@ -1,9 +1,182 @@
 {% extends 'base.html'%}
+<!-- {% load static%}
+{% load bootstrap4%} -->
 {% block content %}
-{{block.super}}
-<h1>YOOOOH</h1>
-{% for image in images %}
-<img src="{{image.image.url}}" alt="image1">
-<button><a href="{%url 'details' image.id%}">View</a></button>
-{% endfor %}
+<!-- {{block.super}} -->
+<style>
+    *, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Courier, 'sans-serif';
+  background-color: #fff;
+  color: #242424;
+}
+
+h1, p {
+  margin: 0 0 1em 0;
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+.wrapper > * {
+  background-color: #fafafa;
+  color: #242424;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.header {
+  padding: 24px;
+}
+
+.header, .footer {
+  grid-column: 1 / -1;
+  clear: both;
+}
+
+.content {
+  padding-right: 40px;
+  padding-left: 40px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 16px;
+}
+
+.panel {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.panel-img {
+  width: 100%;
+  height: 80%;
+}
+
+.tall-panel {
+  grid-row-end: span 2;
+}
+
+@media (max-width: 1200px) { 
+  .content {
+    padding-right: 72px;
+    padding-left: 72px;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(220px, 1fr) ) ;
+    grid-auto-rows: minmax(200px, auto);
+  }  
+}
+
+@supports (display: grid) {
+  .wrapper > * {
+    width: auto;
+    margin: 0;
+  }
+}
+</style>
+
+<div class="wrapper">
+  <header class="header">Pinterest</header>
+    
+  <article class="content">
+    
+     <div class="panel tall-panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/bf/24/7b/bf247b7bdf016e38a0a507de0f5fabf9.jpg" />
+    </div>
+    
+     <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+     <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel tall-panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/65/cd/8f/65cd8fc3a0b31bdc5c48b9ce09224d22.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+     <div class="panel tall-panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/bf/24/7b/bf247b7bdf016e38a0a507de0f5fabf9.jpg" />
+    </div>
+    
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+     <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+     <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+   
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+     <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+   
+    
+    <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+    
+     <div class="panel">
+      <img class="panel-img" src="https://i.pinimg.com/564x/fd/9a/1e/fd9a1e674ef0690532d77e9842e5ec09.jpg" />
+    </div>
+      
+  </article>
+    
+</div>
 {% endblock %}

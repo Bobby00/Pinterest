@@ -33,3 +33,7 @@ class Image(models.Model):
     def get_image(image_id):
         images = Image.objects.get(id = image_id)
         return images
+    @classmethod
+    def search_by_category(cls,search_term):
+        searched = cls.objects.filter(category__name__icontains = search_term)
+        return searched

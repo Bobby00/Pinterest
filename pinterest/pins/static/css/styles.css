@@ -1,3 +1,14 @@
-h1{
-    color: green;
-}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1px;
+    background-color:white;
+    padding: 1px;
+  }
+  .grid-item {
+    background-color: white;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+  }

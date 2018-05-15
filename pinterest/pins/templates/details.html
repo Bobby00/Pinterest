@@ -1,10 +1,23 @@
 {% extends 'base.html'%}
 {% block content %}
 {{block.super}}
+{%if specific.image%}
+<img src="{{specific.image.url}}" alt="">
+{%endif%}
 
-    <img src="{{specific.image.url}}" alt="image">
 
 <p>{{specific.category}}</p>
 <p>{{specific.location}}</p>
+<input type="text" value="{{specific.image.url}}" id="myInput">
+<button onclick="myFunction()">Copy to clipboard</button>
+
+<script>
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("Copy");
+  alert("Copied the text: " + copyText.value);
+}
+</script></br>
 <a href="/">Full view</a>
 {% endblock %}
